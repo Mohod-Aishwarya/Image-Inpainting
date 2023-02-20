@@ -7,7 +7,7 @@ from .common import BaseNetwork
 
 
 class InpaintGenerator(BaseNetwork):
-    def __init__(self, args):  # 1046
+    def __init__(self, args):
         super(InpaintGenerator, self).__init__()
 
         self.encoder = nn.Sequential(
