@@ -66,9 +66,9 @@ if __name__ == '__main__':
 
     from attrdict import AttrDict
     args = {
-        'dir_image': '/content/drive/MyDrive/dataset/images',
+        'dir_image': '/content/drive/MyDrive/dataset',
         'data_train': 'places2',
-        'dir_mask': '/content/drive/MyDrive/dataset/mask',
+        'dir_mask': '/content/drive/MyDrive/dataset',
         'mask_type': 'pconv',
         'image_size': 512
     }
