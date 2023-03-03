@@ -55,8 +55,8 @@ class InpaintingData(Dataset):
             mask = Image.fromarray(m).convert('L')
         
         # augment
-        image = self.img_trans(image) * 2. - 1.
-        mask = F.to_tensor(self.mask_trans(mask))
+#         image = self.img_trans(image) * 2. - 1.
+#         mask = F.to_tensor(self.mask_trans(mask))
 
         return image, mask, filename
 
