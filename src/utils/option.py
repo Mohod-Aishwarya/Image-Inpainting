@@ -3,13 +3,13 @@ import argparse
 parser = argparse.ArgumentParser(description='Image Inpainting')
 
 # data specifications 
-parser.add_argument('--dir_image', type=str, default='/content/drive/MyDrive/dataset/images',
+parser.add_argument('--dir_image', type=str, default='/content/drive/MyDrive/dataset',
                     help='image dataset directory')
-parser.add_argument('--dir_mask', type=str, default='/content/drive/MyDrive/dataset/mask',
+parser.add_argument('--dir_mask', type=str, default='/content/drive/MyDrive/dataset',
                     help='mask dataset directory')
-parser.add_argument('--data_train', type=str, default='mixed',
+parser.add_argument('--data_train', type=str, default='places2',
                     help='dataname used for training')
-parser.add_argument('--data_test', type=str, default='mixed',
+parser.add_argument('--data_test', type=str, default='places2',
                     help='dataname used for testing')
 parser.add_argument('--image_size', type=int, default=512,
                     help='image size used during training')
