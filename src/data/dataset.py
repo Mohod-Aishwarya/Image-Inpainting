@@ -27,6 +27,8 @@ class InpaintingData(Dataset):
             print(">>>>...REading images.....")
             
             self.image_path.extend(glob(os.path.join(args.dir_image, args.data_train, ext)))
+            
+        print(">>>...........Reading images done.......")
       
         
 
