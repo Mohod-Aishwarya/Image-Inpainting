@@ -18,12 +18,17 @@ class InpaintingData(Dataset):
         self.mask_type = args.mask_type
         
         # image and mask 
+        print(">>>>...REading masks.....")
+        self.mask_path = glob(os.path.join(args.dir_mask, args.mask_type, '*.png'))
+        print(">>>>...REading masks done.....")
+        
         self.image_path = []
         for ext in ['*.jpg', '*.png']: 
             print(">>>>...REading images.....")
+            
             self.image_path.extend(glob(os.path.join(args.dir_image, args.data_train, ext)))
       
-        self.mask_path = glob(os.path.join(args.dir_mask, args.mask_type, '*.png'))
+        
 
         # augmentation 
 #         self.img_trans = transforms.Compose([
