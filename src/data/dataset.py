@@ -20,7 +20,9 @@ class InpaintingData(Dataset):
         # image and mask 
         self.image_path = []
         for ext in ['*.jpg', '*.png']: 
+            print(">>>>...REading images.....")
             self.image_path.extend(glob(os.path.join(args.dir_image, args.data_train, ext)))
+      
         self.mask_path = glob(os.path.join(args.dir_mask, args.mask_type, '*.png'))
 
         # augmentation 
