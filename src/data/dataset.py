@@ -21,7 +21,7 @@ class InpaintingData(Dataset):
         self.mask_path = glob(os.path.join(args.dir_mask, args.mask_type, '*.png'))
     
         self.image_path = []
-        for ext in ['*.jpg', '*.png']
+        for ext in ['*.jpg', '*.png']:
             self.image_path.extend(glob(os.path.join(args.dir_image, args.data_train, ext)))
             
         print(">>>.........Reading images and mask done.......")
