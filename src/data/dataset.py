@@ -80,6 +80,7 @@ if __name__ == '__main__':
     args = AttrDict(args)
 
     data = InpaintingData(args)
+    print(data)
     print(len(data), len(data.mask_path))
     img, mask, filename = data[0]
     print(img.size(), mask.size(), filename)
