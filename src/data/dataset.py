@@ -17,33 +17,29 @@ class InpaintingData(Dataset):
         self.w = self.h = args.image_size
         self.mask_type = args.mask_type
         
-        # image and mask 
-        print(">>>>...REading masks.....")
+        # image and mask
         self.mask_path = glob(os.path.join(args.dir_mask, args.mask_type, '*.png'))
-        print(">>>>...REading masks done.....")
-        
+    
         self.image_path = []
-        for ext in ['*.jpg', '*.png']: 
-            print(">>>>...REading images.....")
-            
+        for ext in ['*.jpg', '*.png']
             self.image_path.extend(glob(os.path.join(args.dir_image, args.data_train, ext)))
             
-        print(">>>...........Reading images done.......")
+        print(">>>.........Reading images and mask done.......")
       
         
 
         # augmentation 
-#         self.img_trans = transforms.Compose([
-#             transforms.RandomResizedCrop(args.image_size),
-#             transforms.RandomHorizontalFlip(),
-#             transforms.ColorJitter(0.05, 0.05, 0.05, 0.05),
-#             transforms.ToTensor()])
-#         self.mask_trans = transforms.Compose([
-#             transforms.Resize(args.image_size, interpolation=transforms.InterpolationMode.NEAREST),
-#             transforms.RandomHorizontalFlip(),
-#             transforms.RandomRotation(
-#                 (0, 45), interpolation=transforms.InterpolationMode.NEAREST),
-#         ])
+        self.img_trans = transforms.Compose([
+            transforms.RandomResizedCrop(args.image_size),
+            transforms.RandomHorizontalFlip(),
+            transforms.ColorJitter(0.05, 0.05, 0.05, 0.05),
+            transforms.ToTensor()])
+        self.mask_trans = transforms.Compose([
+            transforms.Resize(args.image_size, interpolation=transforms.InterpolationMode.NEAREST),
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomRotation(
+                (0, 45), interpolation=transforms.InterpolationMode.NEAREST),
+        ])
 
         
     def __len__(self):
