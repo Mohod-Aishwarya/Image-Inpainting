@@ -80,8 +80,8 @@ if __name__ == '__main__':
     args = AttrDict(args)
 
     data = InpaintingData(args)
-    print("Total images:",len(data))
-    print("Total mask images:",len(data.mask_path))
-    #print(len(data), len(data.mask_path))
+    #print("Total images:",len(data))
+    #print("Total mask images:",len(data.mask_path))
+    print(len(data), len(data.mask_path))
     img, mask, filename = data[0]
-    print(img.size[0], mask.size[0], filename)
+    print(img.size(-1),mask.size(-1),filename)
