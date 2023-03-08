@@ -60,8 +60,8 @@ class InpaintingData(Dataset):
             mask = Image.fromarray(m).convert('L')
         
         # augment
-#         image = self.img_trans(image) * 2. - 1.
-#         mask = F.to_tensor(self.mask_trans(mask))
+        image = self.img_trans(image) * 2. - 1.
+        mask = F.to_tensor(self.mask_trans(mask))
 
         return image, mask, filename
 
@@ -80,7 +80,8 @@ if __name__ == '__main__':
     args = AttrDict(args)
 
     data = InpaintingData(args)
-    print(data.__dict__)
-    print(len(data), len(data.mask_path))
+    print("Total images:",len(data))
+    print("Total mask images:",len(data.mask_path))
+    #print(len(data), len(data.mask_path))
     img, mask, filename = data[0]
-    print(img.size(), mask.size(), filename)
+    print(img.size[0], mask.size[0], filename)
